@@ -1,6 +1,13 @@
 # text-index
 ## Prerequisite
+- Python 3.7
+- pip18.0
+- pipenv 2018.7.1
+
+## install & start
 ```bash
-docker -v
-Docker version 18.06.1-ce, build e68fc7a
+git clone https://github.com/Angeliz/text-index.git
+cd text-index
+pipenv install --dev
+python setup.py
 ```
