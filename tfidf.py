@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 
 from utils import read_file, read_bunch_obj, write_bunch_obj
-from config import bunch_path, space_path, experiment_bunch_path, experiment_space_path
+from config_local import bunch_path, space_path, experiment_bunch_path, experiment_space_path
 
 
 def vector_space(stopword_path, bunch_path, space_path, train_tfidf_path=None):

@@ -3,7 +3,7 @@ import pickle
 from sklearn.datasets import base
 
 from utils import read_file, listdir_nohidden
-from config import seg_path, bunch_path, experiment_seg_path, experiment_bunch_path
+from config_local import seg_path, bunch_path, experiment_seg_path, experiment_bunch_path
 
 
 def corpus_to_bunch(bunch_path, seg_path):

@@ -4,7 +4,7 @@ import jieba.analyse
 import os
 
 from utils import listdir_nohidden, save_file, read_file
-from config import corpus_path, seg_path, experiment_corpus_path, experiment_seg_path
+from config_local import corpus_path, seg_path, experiment_corpus_path, experiment_seg_path
 
 
 # 分词

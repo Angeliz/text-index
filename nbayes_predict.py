@@ -3,7 +3,7 @@ from sklearn.naive_bayes import MultinomialNB  # 导入多项式贝叶斯算法
 from sklearn import metrics
 
 from utils import read_bunch_obj
-from config import space_path, experiment_space_path
+from config_local import space_path, experiment_space_path
 
 
 def predict_result(space_path, experiment_space_path):

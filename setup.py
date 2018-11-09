@@ -1,4 +1,4 @@
-from config import corpus_path, seg_path, bunch_path, space_path, experiment_corpus_path, experiment_seg_path, experiment_bunch_path, experiment_space_path
+from config_local import corpus_path, seg_path, bunch_path, space_path, experiment_corpus_path, experiment_seg_path, experiment_bunch_path, experiment_space_path
 from corpus_segment import corpus_segment, experiment_corpus_segment
 from corpus_to_bunch import corpus_to_bunch, experiment_corpus_to_bunch
 from tfidf import vector_space
