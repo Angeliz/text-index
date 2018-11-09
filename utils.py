@@ -1,4 +1,5 @@
 import os
+import pickle
 
 
 # 忽略Mac的.DS
@@ -20,3 +21,15 @@ def read_file(read_path):
         content = fp.read()
     return content
 
+
+# 读取bunch对象
+def read_bunch_obj(path):
+    with open(path, "rb") as file_obj:
+        bunch = pickle.load(file_obj)
+    return bunch
+
+
+# 保存bunch对象
+def write_bunch_obj(path, bunchobj):
+    with open(path, "wb") as file_obj:
+        pickle.dump(bunchobj, file_obj)

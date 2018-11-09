@@ -1,17 +1,9 @@
 # encoding=utf-8
-import os
 import pickle
 from sklearn.datasets import base
 
-from config import seg_path, bunch_path
-from utils import  read_file
-
-
-# 忽略Mac的.DS
-def listdir_nohidden(path):
-    for f in os.listdir(path):
-        if not f.startswith('.'):
-            yield f
+from utils import read_file, listdir_nohidden
+from config import seg_path, bunch_path, experiment_seg_path, experiment_bunch_path
 
 
 def corpus_to_bunch(bunch_path, seg_path):
@@ -34,8 +26,6 @@ def corpus_to_bunch(bunch_path, seg_path):
             bunch.filenames.append(seg_file)
             bunch.contents.append(read_file(seg_full_path))
 
-    print(bunch.contents)
-
     with open(bunch_path, "wb") as file_obj:
         pickle.dump(bunch, file_obj)
 
@@ -44,5 +34,28 @@ def corpus_to_bunch(bunch_path, seg_path):
     print("===================*****====================")
 
 
+def experiment_corpus_to_bunch(bunch_path, seg_path):
+    '''
+    :param bunch_path: Bunch存储路径
+    :param seg_path:  分词后语料库路径
+    '''
+    bunch = base.Bunch(target_name=[], label=[], filenames=[], contents=[])
+
+    seg_file_list = listdir_nohidden(seg_path)
+
+    for seg_file in seg_file_list:
+        seg_full_path = seg_path + "/" + seg_file
+        bunch.filenames.append(seg_file)
+        bunch.contents.append(read_file(seg_full_path))
+
+    with open(bunch_path, "wb") as file_obj:
+        pickle.dump(bunch, file_obj)
+
+    print("===================*****====================")
+    print("experiment_corpus_to_bunch end")
+    print("===================*****====================")
+
+
 if __name__ == "__main__":
     corpus_to_bunch(bunch_path, seg_path)
+    experiment_corpus_to_bunch(experiment_bunch_path, experiment_seg_path)
