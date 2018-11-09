@@ -10,7 +10,7 @@ git clone https://github.com/Angeliz/text-index.git
 cd text-index
 pipenv install --dev
 cp config.py config_local.py
-# config your path
+# config your path :)
 python setup.py
 ```
 
