@@ -1,7 +1,0 @@
-<application>
-  <component name="FileTypeManager" version="17">
-    <extensionMap>
-      <mapping pattern="nbayes_predict" type="Python" />
-    </extensionMap>
-  </component>
-</application>
