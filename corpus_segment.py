@@ -29,6 +29,8 @@ def corpus_segment(corpus_path, seg_path):
             full_path = class_path + file
             content = read_file(full_path)
             content_seg = jieba.cut(content)
+            # 关键词提取，标引
+            # print(file, jieba.analyse.extract_tags(content, topK=5, withWeight=False, allowPOS=('ns', 'n', 'vn', 'v')))
             save_file(seg_class_path + file, bytes(" ".join(content_seg), encoding="utf8"))  # 将处理后的文件保存到分词后语料目录
 
     print("===================*****====================")
